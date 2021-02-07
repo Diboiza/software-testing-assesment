@@ -1,0 +1,37 @@
+Q1:Given the above high level requirements,
+what are some of the questions you would ask each of following team members to understand this feature better?
+
+Product Owner
+1. There is a new feature requested on one of the existing products: what is the product what does it do?
+2. What issues led to the product requiring this new features?
+3. Why do we want a single Administrator to manage their own standard users?
+4. What happens if a standard user needs to be managed and the administrator is not available?
+5. What is the current existing feature for the administrators?
+6. What are the available licenses? how do they affect a user being added?
+7. Do these users have roles? if so what are they? are they depended on the license provided?
+8. If users have roles based on licenses what happens if the user role has to be changed? i.e they get promoted?
+
+UX Designer
+1. Are there going to be ux changes required to accommodate these changes?
+2. If yes, what new ux changes will need to be done? amend existing or create new?
+3. Do we have the design screens changes to be done ready?
+
+Technical Architect
+1. What risks are associated with this change?
+2. What other systems will be impacted by this change?
+3. Will changes need to be done on those systems as well?
+4. If so is it in our scope to test those changes?
+
+Q2: In order to delight the user with these features, how would you want it to work?
+1.In context of the user, The feature has to work as expected, not only that but the feature should work in a way that is easy
+for the users to understand, the ux must be appealing to the user, we must strive to explore the product
+to find ways in which the product can fail and find ways to mitigate that risk from the user.
+
+Q3: Based on your response to the previous question what would you automate in the testing of this feature?
+1. We first need to establish that testing is broad and automation is not necessarily testing however it is
+a step in the test process which we can call automation checking which aids in assisting us perform
+repeatable tasks quickly. with that being said I would automate the functional UI checks, add different types
+of users, edit the users, remove the users, if there APIs that we can test then automate them in the context
+of the feature Add, edit, remove, if we have to perform regression tests we can automate exist features based
+on the roles that the different users can perform.
+This then will enable us to focus on other aspects of testing, security, risk-based, performance etc
