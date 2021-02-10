@@ -1,4 +1,4 @@
-CREATE DATABASE northwind;
+--CREATE DATABASE northwind;
 
 --
 -- PostgreSQL database dump
