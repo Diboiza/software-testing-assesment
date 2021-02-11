@@ -22,7 +22,6 @@ pipeline {
                   // a directory 'order' is created for container test-output
                   sh "docker run --rm -e SELENIUM_HUB=${seleniumHub} -e BROWSER=chrome -e github https://github.com/Diboiza/software-testing-assesment.git  --network ${network} vinsdocker/containertest mvn clean test"
                }
-            )
          }
       }
       stage('Tearing Down Selenium Grid') {
