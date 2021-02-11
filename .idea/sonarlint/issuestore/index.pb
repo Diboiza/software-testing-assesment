@@ -9,3 +9,11 @@ J
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 O
 designAndReasoning/Analysis.txt,d\f\df055f1a9151e036f51e6703d33420c88c348bd5
+X
+(sqlComprehension/amount_of_customers.sql,b\2\b21a3170829d63227ffdaa4f5fafe710616fe223
+^
+.automationSolution/src/test/docker-compose.yml,3\3\33c85d5256ece2e9615d98cb19efaefbdd2ff472
+M
+automationSolution/Dockerfile,d\3\d34846730e67f2f962b87b3cca928359b9eea36d
+R
+"sqlComprehension/northwind_ddl.sql,4\2\4234d3cd41deefdb925925fa39ba6f2d54753dc4
