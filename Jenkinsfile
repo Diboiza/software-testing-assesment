@@ -6,9 +6,6 @@ def containertest='conatinertest-${BUILD_NUMBER}'
 
 pipeline
 {
-
-   agent any
-
    stages{
       stage('Setting Up Selenium Grid')
       {
