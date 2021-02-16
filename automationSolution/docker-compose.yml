@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+
+    selenium-hub:
+      container_name: hub-container
+      image: selenium/hub
+      volumes:
+       [jenkins-data:/var/selenium_home,/var/run/docker.sock:/var/run/docker.sock]
+      ports:
+      - "4444:4444"
+      environment:
+        GRID_MAX_SESSION: 10
+        GRID_BROWSER_TIMEOUT: 300
+        GRID_TIMEOUT: 300
+        JENKINS_AGENT_SSH_PUBKEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/rO0BM9gu8hVNdn2V1JoXh1fW1SpO9KT7ZMVljz5sAuvpXks2MuIY8b728LAYssYHv5Gyol+AdvOi/Fjq23ZpKAwEn0z/LvR57M5BqfrBGMU/IwL3t1wuuv3ZqpiC8XAC+ny3QeXnD5x/flNNszQ9x679BdtDouZkMgghdZztiN+4yCBIv1hd/vBbaurzQc7rbVkREO2v3WXEOmWw8i97sDyhSlKa8SwY3yr/D8YdpJsr7NFjXuEAP4QYJGcVy/AfmXJlLQHQBAdBA3LrRTN/3rfYwmE8358/PbPDF5e2dtmkuGmjJyoE8WwZ7+IZ1O7UwHxMyIhg1wHQ0d7TWllX user@DESKTOP-JJBAE0L
+      networks: [jenkins]
+
+    chrome:
+      container_name: chrome-container
+      image: selenium/node-chrome
+      volumes:
+        [ jenkins-data:/var/selenium_home,/var/run/docker.sock:/var/run/docker.sock ]
+      depends_on:
+        - selenium-hub
+      environment:
+        HUB_PORT_4444_TCP_ADDR: selenium-hub
+        HUB_PORT_4444_TCP_PORT: 4444
+        NODE_MAX_SESSIONS: 2
+        NODE_MAX_INSTANCES: 2
+        JENKINS_AGENT_SSH_PUBKEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/rO0BM9gu8hVNdn2V1JoXh1fW1SpO9KT7ZMVljz5sAuvpXks2MuIY8b728LAYssYHv5Gyol+AdvOi/Fjq23ZpKAwEn0z/LvR57M5BqfrBGMU/IwL3t1wuuv3ZqpiC8XAC+ny3QeXnD5x/flNNszQ9x679BdtDouZkMgghdZztiN+4yCBIv1hd/vBbaurzQc7rbVkREO2v3WXEOmWw8i97sDyhSlKa8SwY3yr/D8YdpJsr7NFjXuEAP4QYJGcVy/AfmXJlLQHQBAdBA3LrRTN/3rfYwmE8358/PbPDF5e2dtmkuGmjJyoE8WwZ7+IZ1O7UwHxMyIhg1wHQ0d7TWllX user@DESKTOP-JJBAE0L
+      networks: [jenkins]
+
+volumes:
+  jenkins-data:
+    external: true
+
+networks:
+  jenkins:
+    external: true
