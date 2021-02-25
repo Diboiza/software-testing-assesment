@@ -3,7 +3,7 @@ pipeline {
         node { label 'docker' }
     }
     tools {
-            maven 'Maven 3.3.9'
+            maven 'Maven'
         }
     stages {
          stage ('Initialize') {
