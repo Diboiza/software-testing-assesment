@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'mvn clean test -Pfailsafe'
+                sh 'mvn clean integration-test'
             }
         }
     }
