@@ -2,10 +2,9 @@ pipeline {
     agent {
         node { label 'docker' }
     }
-//     tools {
-//             maven 'Maven 3.3.9'
-//             jdk 'jdk8'
-//         }
+    tools {
+            maven 'Maven 3.3.9'
+        }
     stages {
          stage ('Initialize') {
             steps {
