@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker.im { node 'selenium-hub' }
+        docker { node 'selenium-hub' }
     }
     stages {
         stage("Checkout") {
